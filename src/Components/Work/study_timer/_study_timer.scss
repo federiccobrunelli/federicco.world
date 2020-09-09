@@ -1,0 +1,96 @@
+.study_timer_demo {
+    grid-area: component;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    gap: 0 2%;
+
+    grid-template-rows: minmax(6%, auto) 
+                        1fr 
+                        5%
+                        minmax(50px, 1fr)
+                        minmax(8%, auto) ;
+
+    grid-template-columns: 8% 20% 5% 60% 8%;
+
+    grid-template-areas: " . . . . . "
+                         " . foto . testo . "
+                         " . . . testo . "
+                         " . skills . testo . "
+                         " . . . . . ";
+
+    min-height: 0;  /* NEW */
+    min-width: 0; 
+
+
+
+    font-weight: 700;
+    line-height: 1.2;
+
+
+
+}
+
+.study_timer_img_demo{
+    grid-area: foto;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.study_timer_content{
+    font-weight: 500;
+    grid-area: testo;
+    max-width: 700px;
+    height: 100%;
+    width: 100%;
+
+    text-align: justify;
+
+    h1{
+        font-weight: 700;
+    }
+
+    a{
+        text-decoration: none;
+        color: unset;
+    }
+
+}
+
+.made_with{
+    width: 100%;
+    height: auto;
+    grid-area: skills;
+    max-width: none;
+    min-height: 150px;
+}
+
+@media (max-width: 1000px){
+
+    .study_timer_demo{
+        grid-template-rows: 
+
+            1%
+            1fr 
+            minmax(max-content,max-content)
+            minmax(min-content, max-content)
+            minmax(auto, auto) ;
+
+        grid-template-columns: 8% 1fr 8%;
+
+        grid-template-areas: 
+            " . . . "
+            " . foto . "
+            " . testo . "
+            " . skills . "
+            " . . . ";
+
+        margin: 2% 0;
+        gap: 2% 0;
+
+        overflow: scroll;
+
+        max-width: 450px;
+    }
+
+}

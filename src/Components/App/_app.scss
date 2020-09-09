@@ -1,0 +1,147 @@
+%ShadowAndApp{
+  margin: 2.5% auto 0 auto;
+  height: 90%;
+  width: 90%;
+  //min-height: 600px;
+  border-radius: 11px;
+}
+
+.motion{
+  display: none;
+}
+
+.pointer{
+  display: initial;
+}
+
+
+.Link{
+  text-decoration: none;
+  color: currentColor;
+}
+
+.Wrapper{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+  min-width: 0;
+
+
+}
+
+
+.Shadow{
+  top: 100vh;
+  right:0;
+  bottom:0;
+  left: 0;
+  position: absolute;
+  background: #A2FFE6;
+  z-index: 8;
+  @extend %ShadowAndApp;
+}
+
+.App{
+    position: relative;
+    z-index: 9;
+    font-family: 'Inter', sans-serif;
+    min-height: 0;
+    min-width: 0;
+    overflow: scroll;
+
+    display: grid;
+  
+    grid-template:  /* ROWS */ 
+
+                      3% /*MARGIN*/
+                      minmax(10%, 13%) /*LOGO-MENU*/
+                      2% /*MARGIN*/
+
+                      minmax(400px, 1fr)
+
+                      4% /*MARGIN*/
+                      minmax(10%, auto) /*FOOTER*/
+                      5% /*MARGIN*/ 
+                      / 
+                      
+    /* COLS */ 5% minmax(275px, 1fr) 1fr minmax(275px, 1fr) 5% ;
+
+
+    grid-template-areas:  ". . . . ."
+                          ". logo . menu ."
+                          ". . . . ."
+                          
+
+                          "component component component component component" /*1fr*/
+
+
+                          ". . . . ."
+                          ". footer footer footer ."
+                          ". . . . .";
+    gap: 0 2%;
+    background-color: #FFFFFF;
+
+    text-align: center;
+
+
+    @extend %ShadowAndApp;
+  }
+
+
+  a{
+    cursor: pointer;
+  }
+  
+
+  .logo{
+    
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+
+    grid-area: logo;
+    display: flex;
+
+
+    margin: 1em auto;
+    height: 20%;
+    width: 100%;
+    max-width: 400px;
+
+    text-decoration: none;
+    color: #272424;
+    z-index: 100;
+
+
+
+    span{
+      &:hover{
+        font-size: 1.8em;
+        transition: 15ms;
+        transition-delay: 2ms;
+        border-top: 5px solid #A2FFE6;
+        border-radius: 2.5px;
+
+      }
+    }
+  }
+
+  .footer{
+    font-weight: 700;
+    grid-area: footer;
+    display: flex;
+    margin: 0 26% 1% 26%;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    a{
+      &:hover{
+        transition: all 150ms;
+        transform: scale(1.5, 1.5);
+
+      }
+    }
+  }
+
+

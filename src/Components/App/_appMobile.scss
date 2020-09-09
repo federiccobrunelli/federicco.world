@@ -1,0 +1,91 @@
+@media (max-width: 1000px) {
+
+
+    .Shadow{
+
+        margin: 0;
+        height: 95%;
+        width: 95%;
+
+        border-radius: 30px;
+  
+    }
+
+    .motion{
+      display: initial;
+    }
+
+    .pointer{
+      display: none;
+    }
+
+
+    .Wrapper {
+      position: relative;
+      width: 95%;
+      height: 97%;
+      margin: 2% auto;
+
+    }
+
+    .App{
+
+      height: 95%;
+      width: 95%;
+      margin: 5% auto auto auto;
+
+
+
+
+
+      grid-template-rows: 1.5% /*MARGIN*/
+                          minmax(10%, auto) /*LOGO-MENU*/
+                          0.1% /*MARGIN*/
+
+                          1fr /*COMPONENT*/
+
+                          2% /*MARGIN*/
+                          5% /*FOOTER*/
+                          7%; /*MARGIN*/
+
+      grid-template-columns: 5% minmax(40%, 1fr) 10% 5% ;
+
+      grid-template-areas:  
+      " . . . . "
+      " logo logo menu . "
+      " . . . . "
+
+      " component component component component "
+
+      " . . . ."
+      " . footer footer . "
+      " . . . . ";
+
+      
+
+      
+      gap: 0;
+      justify-items: center;
+
+      border-radius: 30px;
+    }
+
+
+    .logo{
+      justify-self: flex-start;
+      margin-left: 10%;
+      font-size: 1.5em;
+    }
+
+    .footer{
+      width: 95%;
+      height: 100%;
+
+      margin: 26% 26% 0 26%;
+      padding-bottom: 10%
+    }
+
+
+
+
+  }

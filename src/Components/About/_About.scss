@@ -1,0 +1,125 @@
+.about{
+    grid-area: component;
+    height: 100%;
+    width: 100%;
+    display: grid;
+
+    grid-template-rows: minmax(6%, auto) 
+                        1fr 
+                        3%
+                        minmax(50px, 1fr)
+                        minmax(auto, auto) ;
+
+    grid-template-columns: 8% 20% 5% 60% 8%;
+
+    grid-template-areas: " . . . . . "
+                         " . foto . content . "
+                         " . . . content . "
+                         " . skills . content . "
+                         " . . . . . ";
+
+    min-height: 0px;  /* NEW */
+    min-width: 0; 
+
+
+
+}
+
+
+.about_Portrait{
+
+    grid-area: foto;
+    width: 95%;
+
+
+    max-width: 280px;
+    min-width: 190px;
+    border-radius: 6px;
+
+
+
+}
+
+.skills{
+    grid-area: skills;
+
+    width: 95%;
+    height: auto;
+    padding: 20px 7px;
+    min-height: 200px;
+    min-width: 190px;
+    max-width: 280px;
+
+
+    border-radius: 6px;
+    background: #0A0A0A;
+    color: white;
+
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: 900;
+    line-height: 95%;
+
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-decoration: none;
+
+
+    .small{
+
+      font-size: .6em;
+      line-height: 100%;
+
+
+    }
+    .height{
+      margin-bottom: -5px;
+    }
+
+    a{
+      &:hover{
+
+        border-radius: 6px;
+        background: #A2FFE6;
+        color: #0A0A0A;
+        border: 0px solid transparent ;
+        padding: 0 4% 0 18%;
+
+        transition: all 250ms;
+      }
+    }
+
+    .shorter{
+        &:hover{
+            padding: 0 4% 0 13%;
+        }
+    }
+}
+
+
+.aboutContent{
+    display: block;
+    grid-area: content;
+    text-align: justify;
+
+    word-spacing: 5px;
+    line-height: 1.3;
+    overflow-y: scroll;
+    padding-right: 2%;
+
+    height: auto;
+
+}
+
+
+
+  
+
+
+
+
+  

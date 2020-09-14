@@ -90,12 +90,27 @@ a {
   transform: scale(1.5, 1.5);
 }
 
+.popUp {
+  width: 70%;
+  position: absolute;
+  margin: 55% 25% 0 25%;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2em 2em;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9em;
+}
+.popUp span {
+  font-size: 1.1em;
+  font-weight: 800;
+}
+
 @media (max-width: 1000px) {
   .Shadow {
     margin: 0;
-    height: 95%;
+    height: 94.2%;
     width: 95%;
-    border-radius: 30px;
+    border-radius: 23px;
   }
 
   .motion {
@@ -108,22 +123,22 @@ a {
 
   .Wrapper {
     position: relative;
-    width: 95%;
-    height: 97%;
-    margin: 2% auto;
+    width: 96%;
+    height: 98%;
+    margin: 2% auto 0 auto;
   }
 
   .App {
     height: 95%;
     width: 95%;
     margin: 5% auto auto auto;
+    gap: 0;
+    justify-items: center;
+    border-radius: 23px;
     grid-template-rows: 1.5% minmax(10%, auto) 0.1% 1fr 2% 5% 7%;
     /*MARGIN*/
     grid-template-columns: 5% minmax(40%, 1fr) 10% 5%;
     grid-template-areas: " . . . . " " logo logo menu . " " . . . . " " component component component component " " . . . ." " . footer footer . " " . . . . ";
-    gap: 0;
-    justify-items: center;
-    border-radius: 30px;
   }
 
   .logo {
@@ -133,6 +148,7 @@ a {
   }
 
   .footer {
+    font-size: 0.79em;
     width: 95%;
     height: 100%;
     margin: 26% 26% 0 26%;
@@ -246,7 +262,7 @@ a {
     display: block;
     text-align: justify;
     word-spacing: 5px;
-    line-height: 200%;
+    line-height: 1.7;
     margin: 0 auto;
   }
 
@@ -565,12 +581,12 @@ a {
 
 @media (max-width: 1000px) {
   .study_timer_demo {
+    height: min-content;
     grid-template-rows: 1% 1fr minmax(max-content, max-content) minmax(min-content, max-content) minmax(auto, auto);
     grid-template-columns: 8% 1fr 8%;
     grid-template-areas: " . . . " " . foto . " " . testo . " " . skills . " " . . . ";
     margin: 2% 0;
     gap: 2% 0;
-    overflow: scroll;
     max-width: 450px;
   }
 }
@@ -622,12 +638,12 @@ a {
 
 @media (max-width: 1000px) {
   .federicco_world_demo {
+    height: min-content;
     grid-template-rows: 1% 1fr minmax(max-content, max-content) minmax(min-content, max-content) minmax(auto, auto);
     grid-template-columns: 8% 1fr 8%;
     grid-template-areas: " . . . " " . foto . " " . testo . " " . skills . " " . . . ";
     margin: 2% 0;
     gap: 2% 0;
-    overflow: scroll;
     max-width: 450px;
   }
 

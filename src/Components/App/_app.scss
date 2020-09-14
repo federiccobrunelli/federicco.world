@@ -144,4 +144,23 @@
     }
   }
 
+  .popUp{
+
+    width: 70%;
+    position: absolute;
+    margin: 55% 25% 0 25%;
+    background: rgba(255, 255, 255, .85);
+    padding: 2em 2em;
+    border-radius: 10px;
+    border: none;
+
+    font-size: .9em;
+
+    span{
+      font-size: 1.1em;
+      font-weight: 800;
+    }
+
+  }
+
 

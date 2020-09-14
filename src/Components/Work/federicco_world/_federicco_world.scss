@@ -69,6 +69,8 @@
 @media (max-width: 1000px){
 
     .federicco_world_demo{
+
+        height: min-content;
         grid-template-rows: 
 
             1%
@@ -89,7 +91,7 @@
         margin: 2% 0;
         gap: 2% 0;
 
-        overflow: scroll;
+
 
         max-width: 450px;
 

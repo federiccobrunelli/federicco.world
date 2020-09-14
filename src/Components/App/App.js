@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import {isAndroid, isIOS} from 'react-device-detect';
 
 
 import {About} from '../About/About';
@@ -14,7 +15,8 @@ import {federicco_world} from "../Work/federicco_world/federicco_world.js"
 import {Home} from '../Home/Home';
 import {Contact} from '../Contact/Contact'
 
-import {resume} from './Brunelli_Federico_Resume.pdf';
+//import {resume} from '../../../public/files/Brunelli_Federico_Resume.pdf';
+
 
 
 
@@ -22,9 +24,13 @@ import {resume} from './Brunelli_Federico_Resume.pdf';
 
 export default function App() {
 
+  const [mousePosition, setMousePosition] = useState({ x: null, y: null });
+  const [deviceMotion, setDeviceMotion] = useState({ xAcceleration: null, yAcceleration: null });
+  const [isSeen, setIsSeen] = useState({ seen: false });
+
+
 
   const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   
     const updateMousePosition = e => {
       setMousePosition({ 
@@ -33,6 +39,7 @@ export default function App() {
     };
   
     useEffect(() => {
+
       window.addEventListener("mousemove", updateMousePosition);
   
       return () => window.removeEventListener("mousemove", updateMousePosition);
@@ -44,152 +51,127 @@ export default function App() {
 
 
 
+  const  useIOS13MotionFunc = () => {
 
+    DeviceMotionEvent.requestPermission().then(response => {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   DeviceMotionEvent.requestPermission()
-// .then(response => {
-//   if (response == 'granted') {
-//     window.addEventListener('devicemotion', (e) => {
-//       // do something with e
-//     })
-//   }
-// })
-// .catch(console.error)
-
-
-
-  // const useDeviceMotion = () => {
-
-    
-  //   const [deviceMotion, setDeviceMotion] = useState({ xAcceleration: null, yAcceleration: null });
-
-  //   useEffect(() => {
-  //       if (window.DeviceMotionEvent) {
-  //         console.log('it works')
-
-
-  //       const handleMotionEvent = event => {
-  //           requestAnimationFrame(() =>
-  //             setDeviceMotion({
-  //                   xAcceleration: (-event.accelerationIncludingGravity.x+2),
-  //                   yAcceleration: (-event.accelerationIncludingGravity.y),
-  //               }),
-  //           );
-  //       };
-
-  //       window.addEventListener('devicemotion', handleMotionEvent, true);
-
-  //       return () => window.removeEventListener('devicemotion', handleMotionEvent);
-  //       }
-  //       }, []);
-
-
-  //       return deviceMotion
-  //   }
-
-  // const { xAcceleration, yAcceleration } = useDeviceMotion()
-
-
-  const useRequestMotionPermission = () => {
-    const [deviceMotion, setDeviceMotion] = useState({ xAcceleration: null, yAcceleration: null });
-
-    useEffect(() => {
-      if (typeof DeviceMotionEvent.requestPermission === 'function') {
-        // iOS 13+
-          console.log('ios13+')
-          DeviceMotionEvent.requestPermission().then(response => {
-
-
-            if (response === 'granted') {
-                console.log('ios13+ response:' + response)
-                
-                if (window.DeviceMotionEvent) {
-                  console.log('we have motion')
-        
-        
-                const handleMotionEvent = event => {
-                    requestAnimationFrame(() =>
-                      setDeviceMotion({
-                            xAcceleration: (-event.accelerationIncludingGravity.x+2),
-                            yAcceleration: (-event.accelerationIncludingGravity.y),
-                        }),
-                    );
-                };
-        
-                window.addEventListener('devicemotion', handleMotionEvent, true);
-        
-                return () => window.removeEventListener('devicemotion', handleMotionEvent);
-                }
-
-                
-            }
-
-
-          }).catch(console.error)
-        
-      } else {
-        
-
+      if (response === 'granted') {
+          console.log('ios13+ response:' + ' ' + response)
+          console.log('seen?:' + ' ' + isSeen.seen);
+          
           if (window.DeviceMotionEvent) {
-            console.log('non ios13+')
+            console.log('we have motion')
   
   
           const handleMotionEvent = event => {
               requestAnimationFrame(() =>
                 setDeviceMotion({
-                      xAcceleration: (-event.accelerationIncludingGravity.x+2),
-                      yAcceleration: (-event.accelerationIncludingGravity.y),
+                      xAcceleration: (-event.accelerationIncludingGravity.x+4)/1.713545626,
+                      yAcceleration: (-event.accelerationIncludingGravity.y)/1.913545626,
                   }),
+
               );
           };
+
+          setIsSeen({ seen: !isSeen.seen })
+          console.log('seen?:' + ' ' + isSeen.seen);
           
+          
+  
           window.addEventListener('devicemotion', handleMotionEvent, true);
   
           return () => window.removeEventListener('devicemotion', handleMotionEvent);
           }
-
-          console.log(deviceMotion)
-  
-          
-        
+      } else {
+        console.log('ios13+ response:' + ' ' + response)
+        setIsSeen({ seen: !isSeen.seen })
+        console.log('seen?:' + ' ' + isSeen.seen);
       }
+
+    }).catch(console.error)
+
+  return deviceMotion
+
+  };
+
+  const useRequestMotionPermission = () => {
+
+    useEffect(() => {
+
+        if (typeof DeviceMotionEvent == 'function' && typeof DeviceMotionEvent.requestPermission === 'function') {
+
+              console.log('ios13+')
+              
+                setIsSeen({
+                  seen: !isSeen.seen
+                });
+              
+              
+              console.log(isSeen.seen)
+              
+
+          } else {
+              if (window.DeviceMotionEvent) {
+                console.log('non ios13+')
+                if (isIOS) { 
+                    
+                  console.log('iphone')
       
+                    const handleMotionEvent = event => {
+                      requestAnimationFrame(() =>
+                          setDeviceMotion({
+                            xAcceleration: (event.accelerationIncludingGravity.x+6)/2.13545626,
+                            yAcceleration: (-event.accelerationIncludingGravity.y)/2.13545626,
+                            }),
+                        );
+                    };
+                      
+                    window.addEventListener('devicemotion', handleMotionEvent, true);
+                    window.removeEventListener('devicemotion', handleMotionEvent);
+                  
+                  } else if (isAndroid) {
 
+                    console.log('Android')
+
+                    const handleMotionEvent = event => {
+                      requestAnimationFrame(() =>
+                        setDeviceMotion({
+                          xAcceleration: (-event.accelerationIncludingGravity.x+6)/2.13545626,
+                          yAcceleration: (event.accelerationIncludingGravity.y)/2.13545626,
+                          }),
+                      );
+                  };
+                    
+                  window.addEventListener('devicemotion', handleMotionEvent, true);
+                  return () => window.removeEventListener('devicemotion', handleMotionEvent);
+
+                  } else {
+                    console.log('Desktop')
+      
+                    const handleMotionEvent = event => {
+                      requestAnimationFrame(() =>
+                          setDeviceMotion({
+                            xAcceleration: (event.accelerationIncludingGravity.x+6)/2.13545626,
+                            yAcceleration: (-event.accelerationIncludingGravity.y)/2.13545626,
+                            }),
+                        );
+                    };
+                      
+                    window.addEventListener('devicemotion', handleMotionEvent, true);
+                    return () => window.removeEventListener('devicemotion', handleMotionEvent);
+                  }
+              }
+          };
     }, []);
-    return deviceMotion
+
+    return { deviceMotion, isSeen, }
+  
   }
-
+  
+  useRequestMotionPermission()
 
   
-  const { xAcceleration, yAcceleration } = useRequestMotionPermission()
   
-  
-
 
   return (
 
@@ -197,7 +179,7 @@ export default function App() {
     <div className="Wrapper">
 
     <div className="Shadow pointer" style={{top: `${y}vh`, left: `${x}vw`}}></div>
-    <div className="Shadow motion" style={{top: `${yAcceleration}vh`, left: `${xAcceleration}vw`}}></div>
+    <div className="Shadow motion" style={{top: `${deviceMotion.yAcceleration}vh`, left: `${deviceMotion.xAcceleration}vw`, }}></div>
 
     <div className="App" >
 
@@ -220,8 +202,12 @@ export default function App() {
         <span>D</span>
         </Link>
 
-        {/* <button onClick={useRequestMotionPermission}>Motion</button> */}
 
+        {isSeen.seen ? <button className="popUp" onClick={ useIOS13MotionFunc }>
+          Hey there!👋 <br/> 
+          Wanna see a cool effect? <br/>
+          <span>please click here</span><br/>
+          and allow "Motion and Orientation Access"</button> : null}
 
       <Switch>
 
@@ -243,7 +229,7 @@ export default function App() {
         <Link className="Link" to="/contact">contact</Link>
         <Link className="Link" to="/">home</Link>
         <Link className="Link" exact="true" to="/work">projects</Link>
-        <Link className="Link" to="" download target="_blank">résumé</Link>
+        <Link className="Link" to="/files/Brunelli_Federico_Resume.pdf" download="Brunelli_Federico_Resume.pdf" target="_blank">résumé</Link>
       
       </div>
 
@@ -254,7 +240,5 @@ export default function App() {
 
   );
 }
-
-
 
 

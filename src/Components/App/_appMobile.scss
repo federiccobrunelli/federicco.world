@@ -3,11 +3,12 @@
 
     .Shadow{
 
-        margin: 0;
-        height: 95%;
-        width: 95%;
+      margin: 0;
+      height: 94.2%;
+      width: 95%;
+      border-radius: 23px;
 
-        border-radius: 30px;
+
   
     }
 
@@ -22,9 +23,9 @@
 
     .Wrapper {
       position: relative;
-      width: 95%;
-      height: 97%;
-      margin: 2% auto;
+      width: 96%;
+      height: 98%;
+      margin: 2% auto 0 auto;
 
     }
 
@@ -34,9 +35,9 @@
       width: 95%;
       margin: 5% auto auto auto;
 
-
-
-
+      gap: 0;
+      justify-items: center;
+      border-radius: 23px;
 
       grid-template-rows: 1.5% /*MARGIN*/
                           minmax(10%, auto) /*LOGO-MENU*/
@@ -61,13 +62,6 @@
       " . footer footer . "
       " . . . . ";
 
-      
-
-      
-      gap: 0;
-      justify-items: center;
-
-      border-radius: 30px;
     }
 
 
@@ -78,6 +72,8 @@
     }
 
     .footer{
+
+      font-size: .79em;
       width: 95%;
       height: 100%;
 

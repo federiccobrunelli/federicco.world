@@ -23,12 +23,10 @@ export function Home() {
                 </Link>
 
 
-
                 <Link className="about_me title" to="/about"><span>about me</span></Link>
-                    <Link className="link" to="/about">
+                <Link className="link" to="/about">
                     <img className="about_me_img square" alt="Brunelli Federico Portrait" src={Portrait} />
-                    </Link>
-
+                </Link>
 
 
                 <Link className="my_work title" to="/work"><span>my work</span></Link>

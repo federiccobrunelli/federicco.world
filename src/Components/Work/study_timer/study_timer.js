@@ -27,20 +27,31 @@ export function study_timer() {
 
 
         <div className="content study_timer_content">
-          <h1><a href="https://www.study-timer.com">STUDY-TIMER.COM</a></h1>
+          <h1><a href="https://www.study-timer.com" alt="" target="_blank">STUDY-TIMER.COM</a></h1>
           <br/>
 
-          <p>study-timer.com is a useful tool to track how much time you’re spending either having a break or studying. </p>
-          <br/>
+          <p><a href="https://www.study-timer.com" alt="" target="_blank" className="external_link">
+            study-timer.com</a> is an incredibly useful tool to track the time spent on a break or focused on a task.
 
+          <span className="brM"/>
+          <h2>#USE CASE SCENARIO</h2>
+          <span className="brS"/>
+          It can be used in many situations but I found it to be a key element to give myself a structure when studying and to keep me motivated to do more every day. 
+          I've been storing all this sessions data on an excel file which gave me an excellent overview of my progress and commitment.
 
-          <p>I’ve been using a similar app to keep track of my commitment to study since I started my path to web-development.</p>
-          <br/>
-
-          <p>Once I had enough skills I decide to design and code my own version.</p>
-          <br/>
-
-          <p>I’ll keep adding features along with my improved skills, next to come is a mobile/desktop version and a backend to store all the statistics of registered users.</p>
+          <span className="brM"/>
+          <h2>#HISTORY</h2>
+          <span className="brS"/>
+          I’ve been using a similar app at beginning of my learning path, and after 6 months once I had enough knowledge I developed my own time-tracking application.
+          
+          <span className="brM"/>
+          <h2>#NEXT UPDATES</h2>
+          <span className="brS"/>
+          I have plans to keep adding features along with my improved skills by creating a desktop/mobile version using React Native and adding back-end functionalities to give users the ability to register, 
+          save every session and get an overview of their progress.
+          <span className="brM"/>
+          
+          </p>
         </div>
 
     </div>

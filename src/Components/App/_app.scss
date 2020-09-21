@@ -1,3 +1,113 @@
+.App{
+  position: relative;
+  z-index: 9;
+  font-family: 'Inter', sans-serif;
+  min-height: 0;
+  min-width: 0;
+  overflow: scroll;
+
+  display: grid;
+
+  grid-template:  /* ROWS */ 
+
+                    3% /*MARGIN*/
+                    minmax(10%, 13%) /*LOGO-MENU*/
+                    2% /*MARGIN*/
+
+                    minmax(400px, 1fr)
+
+                    4% /*MARGIN*/
+                    minmax(10%, auto) /*FOOTER*/
+                    5% /*MARGIN*/ 
+                    / 
+                    
+  /* COLS */ 5% minmax(275px, 1fr) 1fr minmax(275px, 1fr) 5% ;
+
+
+  grid-template-areas:  ". . . . ."
+                        ". logo . menu ."
+                        ". . . . ."
+                        
+
+                        "component component component component component" /*1fr*/
+
+
+                        ". . . . ."
+                        ". footer footer footer ."
+                        ". . . . .";
+  //gap: 0 2%;
+  background-color: #FFFFFF;
+
+  text-align: center;
+
+
+  @extend %ShadowAndApp;
+
+  ::-moz-selection { /* Code for Firefox */
+    color: #272424;
+    background: #A2FFE6;
+  }
+  
+  ::selection {
+    color: #272424;
+    background: #A2FFE6;
+  }
+
+  h1, h2, h3, h4{
+    font-size: 1.9em;
+    //text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+
+  }
+
+  h2{
+      font-weight: 700;
+      font-size: 1.45em;
+  }
+
+  h3{
+      font-weight: 600;
+      font-size: 1.154em;
+  }
+
+  h4{
+    font-weight: 600;
+    font-size: 1.15em;
+  }
+
+  .brS { 
+    display: block; 
+    margin-bottom: .48em; 
+} 
+  
+  .brM { 
+      display: block; 
+      margin-bottom: .8em; 
+  } 
+    
+  .brL { 
+      display: block; 
+      margin-bottom: 1.6em; 
+  } 
+
+  .brXL { 
+    display: block; 
+    margin-bottom: 2em; 
+  } 
+
+  .brXXL { 
+    display: block; 
+    margin-bottom: 3em; 
+  } 
+
+  .external_link, .deco{
+    color: #7fe3c8;
+    text-decoration: underline;
+  }
+
+}
+
 %ShadowAndApp{
   margin: 2.5% auto 0 auto;
   height: 90%;
@@ -42,51 +152,7 @@
   @extend %ShadowAndApp;
 }
 
-.App{
-    position: relative;
-    z-index: 9;
-    font-family: 'Inter', sans-serif;
-    min-height: 0;
-    min-width: 0;
-    overflow: scroll;
 
-    display: grid;
-  
-    grid-template:  /* ROWS */ 
-
-                      3% /*MARGIN*/
-                      minmax(10%, 13%) /*LOGO-MENU*/
-                      2% /*MARGIN*/
-
-                      minmax(400px, 1fr)
-
-                      4% /*MARGIN*/
-                      minmax(10%, auto) /*FOOTER*/
-                      5% /*MARGIN*/ 
-                      / 
-                      
-    /* COLS */ 5% minmax(275px, 1fr) 1fr minmax(275px, 1fr) 5% ;
-
-
-    grid-template-areas:  ". . . . ."
-                          ". logo . menu ."
-                          ". . . . ."
-                          
-
-                          "component component component component component" /*1fr*/
-
-
-                          ". . . . ."
-                          ". footer footer footer ."
-                          ". . . . .";
-    gap: 0 2%;
-    background-color: #FFFFFF;
-
-    text-align: center;
-
-
-    @extend %ShadowAndApp;
-  }
 
 
   a{
@@ -104,7 +170,7 @@
     display: flex;
 
 
-    margin: 1em auto;
+    margin: auto;
     height: 20%;
     width: 100%;
     max-width: 400px;
@@ -127,7 +193,20 @@
     }
   }
 
+  .burgerMenu{
+    grid-area: menu;
+    height: 80%;
+    width: 100%;
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    
+  }
+
   .footer{
+    font-size: 1em;
     font-weight: 700;
     grid-area: footer;
     display: flex;
@@ -146,21 +225,38 @@
 
   .popUp{
 
-    width: 70%;
-    position: absolute;
-    margin: 55% 25% 0 25%;
-    background: rgba(255, 255, 255, .85);
-    padding: 2em 2em;
+    font-family: 'Work Sans', sans-serif;
+
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+
+    background: rgba(255, 255, 255, .9);
     border-radius: 10px;
     border: none;
 
-    font-size: .9em;
+    font-size: 1.2em;
+
+    div{
+      margin: 8% auto;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 1em;
+
+    }
 
     span{
-      font-size: 1.1em;
+      font-size: 1.5em;
       font-weight: 800;
     }
 
+  }
+
+  @media(min-width: 1700px){
+    .burgerMenu{ padding-right: 7vh; }
   }
 
 

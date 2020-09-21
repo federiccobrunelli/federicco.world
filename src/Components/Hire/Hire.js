@@ -1,18 +1,19 @@
 import React from 'react';
-import{ init } from 'emailjs-com';
+import { Link } from 'react-router-dom';
+import { init } from 'emailjs-com';
 init("user_xbwfslpPeltgsBuPWHmHE");
 
 export class Hire extends React.Component {
   constructor(props) {
-	super(props);
-	this.state = { 
-        text: '', 
-        name: '', 
-        email: '' };
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
+    super(props)
+    this.state = { 
+          text: '', 
+          name: '', 
+          email: '' };
+      this.handleNameChange = this.handleNameChange.bind(this);
+      this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
-	this.handleSubmit = this.handleSubmit.bind(this);
+	  this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   render() {
@@ -20,17 +21,22 @@ export class Hire extends React.Component {
 
         <div className="Hire">
 
-            <h1 className="Hire_title" >Book your call.</h1>
+            <div className="Hire_title" >Book your call.</div>
             
             <div className="blabla_container">
             <br/>
-            <div className="Hire_text">Hey there! <span role="img" aria-label="hello wave">👋</span><br/><br/>
+            <div className="Hire_text">
+            <h2>LET'S GET IN TOUCH</h2><br/>
+            Do you think like I could be a good candidate for your company? Awesome!<span className="brS"/>
 
-            You feel like I could be a good candidate for your company or the right person to build your digital product? Great!<br/><br/>
+            Here's <Link className="external_link" to="/files/Brunelli_Federico_Resume.pdf" target="_blank" style={{color: "black"}}>my curriculum</Link>, 
+            in the meantime you know what to do <span role="img" aria-label="">  👉</span>
+            <span className="brL"/>
             
-            Please send me an email, we’ll organize a call when it best fits for you and tailor design, delivery and price around your needs.<br/><br/>
+            Or you feel like I'm right person to build your digital product? Challenge accepted! <span className="brS"/>
+            Send me an email, we’ll organize a call when it best fits for you and tailor design, delivery and price around your needs. <span className="brS"/>
             
-            Write also in the email a desired date and time, I usually can manage a call the same day too!</div>
+            </div>
             </div>
 
 

@@ -15,9 +15,11 @@ import {federicco_world} from "../Work/federicco_world/federicco_world.js"
 import {Home} from '../Home/Home';
 import {Contact} from '../Contact/Contact'
 
+import { Burger } from './Burger';
+
+import { Menu } from './Menu';
+
 //import {resume} from '../../../public/files/Brunelli_Federico_Resume.pdf';
-
-
 
 
 
@@ -27,11 +29,13 @@ export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const [deviceMotion, setDeviceMotion] = useState({ xAcceleration: null, yAcceleration: null });
   const [isSeen, setIsSeen] = useState({ seen: false });
+  const [open, setOpen] = React.useState(false);
+  const node = React.useRef();
 
 
 
   const useMousePosition = () => {
-  
+
     const updateMousePosition = e => {
       setMousePosition({ 
         x: (e.clientX/200).toFixed(2), 
@@ -50,7 +54,6 @@ export default function App() {
   const { x, y } = useMousePosition();
 
 
-
   const  useIOS13MotionFunc = () => {
 
     DeviceMotionEvent.requestPermission().then(response => {
@@ -66,8 +69,8 @@ export default function App() {
           const handleMotionEvent = event => {
               requestAnimationFrame(() =>
                 setDeviceMotion({
-                      xAcceleration: (-event.accelerationIncludingGravity.x+4)/1.713545626,
-                      yAcceleration: (-event.accelerationIncludingGravity.y)/1.913545626,
+                      xAcceleration: (-event.accelerationIncludingGravity.x+9)/1.713545626,
+                      yAcceleration: (-event.accelerationIncludingGravity.y-3)/1.913545626,
                   }),
 
               );
@@ -120,8 +123,8 @@ export default function App() {
                     const handleMotionEvent = event => {
                       requestAnimationFrame(() =>
                           setDeviceMotion({
-                            xAcceleration: (event.accelerationIncludingGravity.x+6)/2.13545626,
-                            yAcceleration: (-event.accelerationIncludingGravity.y)/2.13545626,
+                            xAcceleration: (-event.accelerationIncludingGravity.x+9)/1.713545626,
+                            yAcceleration: (-event.accelerationIncludingGravity.y-3)/1.913545626,
                             }),
                         );
                     };
@@ -136,8 +139,8 @@ export default function App() {
                     const handleMotionEvent = event => {
                       requestAnimationFrame(() =>
                         setDeviceMotion({
-                          xAcceleration: (-event.accelerationIncludingGravity.x+6)/2.13545626,
-                          yAcceleration: (event.accelerationIncludingGravity.y)/2.13545626,
+                          xAcceleration: (-event.accelerationIncludingGravity.x+9)/1.713545626,
+                          yAcceleration: (event.accelerationIncludingGravity.y-3)/1.913545626,
                           }),
                       );
                   };
@@ -151,8 +154,8 @@ export default function App() {
                     const handleMotionEvent = event => {
                       requestAnimationFrame(() =>
                           setDeviceMotion({
-                            xAcceleration: (event.accelerationIncludingGravity.x+6)/2.13545626,
-                            yAcceleration: (-event.accelerationIncludingGravity.y)/2.13545626,
+                            xAcceleration: (-event.accelerationIncludingGravity.x+9)/1.713545626,
+                            yAcceleration: (-event.accelerationIncludingGravity.y+3)/1.913545626,
                             }),
                         );
                     };
@@ -167,11 +170,27 @@ export default function App() {
     return { deviceMotion, isSeen, }
   
   }
-  
+
   useRequestMotionPermission()
 
+  const useOutsideClick = (ref, callback) => {
+    const handleClick = e => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        callback();
+      }
+    };
   
+    useEffect(() => {
+      document.addEventListener("click", handleClick);
   
+      return () => {
+        document.removeEventListener("click", handleClick);
+      };
+    });
+  };
+
+  useOutsideClick(node, () => setOpen(false));
+
 
   return (
 
@@ -179,7 +198,8 @@ export default function App() {
     <div className="Wrapper">
 
     <div className="Shadow pointer" style={{top: `${y}vh`, left: `${x}vw`}}></div>
-    <div className="Shadow motion" style={{top: `${deviceMotion.yAcceleration}vh`, left: `${deviceMotion.xAcceleration}vw`, }}></div>
+    {/* <div className="Shadow motion" style={{top: `${deviceMotion.yAcceleration}vh`, left: `${deviceMotion.xAcceleration}vw`, }}></div> */}
+    <div className="Shadow motion" style={{transform: `translate(${deviceMotion.xAcceleration*4.2}px, ${deviceMotion.yAcceleration*4.3}px)`}}></div>
 
     <div className="App" >
 
@@ -202,12 +222,23 @@ export default function App() {
         <span>D</span>
         </Link>
 
+        <div ref={node} className="burgerMenu">
+        <Burger open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} />
+        </div>
+
+
+
 
         {isSeen.seen ? <button className="popUp" onClick={ useIOS13MotionFunc }>
-          Hey there!👋 <br/> 
-          Wanna see a cool effect? <br/>
-          <span>please click here</span><br/>
-          and allow "Motion and Orientation Access"</button> : null}
+          <div>Hey there!<span role="img" aria-label="hello wave">👋</span><br/> 
+          Before we start .. 
+          Wanna see something cool? 
+          <span className="brM"/>
+          <span>PLEASE<br/> 
+          CLICK HERE</span>
+          <span className="brM"/>
+          and allow "Motion and Orientation Access"</div></button> : null}
 
       <Switch>
 
@@ -217,19 +248,22 @@ export default function App() {
         <Route exact path="/work" component={Work}/>
         <Route path="/work/study_timer" component={study_timer}/>
         <Route path="/work/federicco_world" component={federicco_world}/>
-        <Route path="/contact" component={Contact}/>
+        <Route path="/contacts" component={Contact}/>
 
       </Switch>
-
 
 
       <div className="footer"> 
         
         <Link className="Link" to="/about">about</Link>
-        <Link className="Link" to="/contact">contact</Link>
-        <Link className="Link" to="/">home</Link>
+        
+        <Link className="Link" to="/contacts">contacts</Link>
+        <Link className="Link" exact="true" to="/">home</Link>
         <Link className="Link" exact="true" to="/work">projects</Link>
-        <Link className="Link" to="/files/Brunelli_Federico_Resume.pdf" download="Brunelli_Federico_Resume.pdf" target="_blank">résumé</Link>
+
+        <Link className="Link" to="/hire">hire <span> </span></Link>
+        
+
       
       </div>
 
@@ -240,5 +274,4 @@ export default function App() {
 
   );
 }
-
 

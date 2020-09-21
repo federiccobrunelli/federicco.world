@@ -40,8 +40,11 @@
     font-weight: 500;
     grid-area: testo;
     max-width: 700px;
-    height: 100%;
+    height: 105%;
     width: 90%;
+    
+    overflow: scroll;
+    padding-right: 2%;
 
     text-align: justify;
 
@@ -54,6 +57,25 @@
         color: unset;
     }
 
+
+    .sketch1, .sketch2, .sketch3{
+        width: 25%;
+        margin: 0 6.5% 0 0;
+    }
+
+
+    .sketch2{
+        margin-bottom: .5%;
+    }
+
+    .sketch3{
+        margin: 0 0 1% .5%;
+    }
+
+    .figmaDemo{
+        width: 50%;
+        border-radius: 10px;
+    }
     
 
 }
@@ -75,9 +97,9 @@
 
             1%
             1fr 
-            minmax(max-content,max-content)
+            minmax(min-content,max-content)
             minmax(min-content, max-content)
-            minmax(auto, auto) ;
+            minmax(min-content,max-content) ;
 
         grid-template-columns: 8% 1fr 8%;
 
@@ -88,7 +110,7 @@
             " . skills . "
             " . . . ";
 
-        margin: 2% 0;
+        margin: 0 0 25% 0;
         gap: 2% 0;
 
 

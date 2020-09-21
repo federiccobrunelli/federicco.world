@@ -14,7 +14,7 @@
 
     display: grid;
     gap: 0;
-    grid-template-rows: 8% 
+    grid-template-rows: 5% 
                         7%
                         7%
                         minmax(min-content, max-content)
@@ -33,7 +33,7 @@
 .blabla_container{
     background-color: #A2FFE6;
     border-radius: 10px;
-    box-shadow: 17px 17px #232326;
+    box-shadow: 17px 17px rgba(35, 35, 38, 0.9);
 
     grid-column: 2/4;
     grid-row: 3/5;
@@ -72,6 +72,7 @@
 }
 
 .Hire_text{
+    font-family: "Inter", sans-serif;
     font-weight: 500;
     line-height: 1.25;
 
@@ -91,14 +92,14 @@
     grid-row: 4/6;
 
     background-color: #FFFFFF;
-    border: 1px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    box-shadow: 17px 17px #232326;;
+    box-shadow: 17px 17px rgba(35, 35, 38, 0.9);
 
 
     input{
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1.7px solid black;
         margin: .6em;
         width: 78%;
         
@@ -106,16 +107,19 @@
 
     textarea{
         border-radius: 5px;
-        border: 1px solid black;
+        border: 1.7px solid black;
         margin: 1em auto;
-        resize: vertical;
+        resize: none;
+
+        height: 20vh;
         width: 90%;
         min-height: 150px;
+        max-height: 250px;
         font-family: 'Work Sans', sans-serif;
     }
 
     .submit{
-        margin: auto;
+        margin: 0 auto;
 
         width: min-content;
         padding: .3em 1.1em;
@@ -133,10 +137,26 @@
     }
 
 
+
 }
 
-@media(max-width:1000px){
-    textarea{
-        height: 250px;
+@media(max-width: 1000px){
+
+    .form{
+        textarea{
+            max-height: none;
+            height: 350px;
+        }
+    }
+
+    .Hire {
+        grid-template-rows: 5% 
+        7%
+        7%
+        minmax(min-content, max-content)
+        11%
+        0;
+
+        margin: 10% 0 -35% 0;
     }
 }

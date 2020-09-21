@@ -41,13 +41,21 @@
     font-weight: 500;
     grid-area: testo;
     max-width: 700px;
-    height: 100%;
-    width: 100%;
+    height: 115%;
+    width: 90%;
+
+    overflow: scroll;
+    padding-right: 4%;
+
 
     text-align: justify;
 
     h1{
         font-weight: 700;
+    }
+
+    h2{
+        font-size: 1.35em;
     }
 
     a{
@@ -87,12 +95,17 @@
             " . skills . "
             " . . . ";
 
-        margin: 2% 0;
+        margin: 0 0 15% 0;
         gap: 2% 0;
 
 
 
         max-width: 450px;
+    }
+
+    .study_timer_content{
+        width: 100%;
+    
     }
 
 }

@@ -1,6 +1,4 @@
 
-
-
 .Contact{
     grid-area: component;
     width: 100%;
@@ -17,26 +15,27 @@
     grid-template-rows: 
                         20%
                         12%
-                        28%
-                        25%
+                        35%
+                        27%
                         15%
                         ;
 
     grid-template-columns: 3% 30% 5% 40% 10%;
 
-
+    overflow: visible;
 
 }
 
 .contact_title{
- grid-row: 1;
- grid-column: 2;
 
- padding: 8% 0 0 0;
- text-align: right;
- font-family: 'Work Sans', sans-serif;
- font-weight: 900;
- font-size: 2.5em;
+    grid-row: 1;
+    grid-column: 2;
+
+    padding: 8% 0 0 0;
+    text-align: right;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
 
 }
 
@@ -63,14 +62,14 @@
 
     z-index: 1;
 
+
 }
 
 .contact_p{
     display: grid;
-    grid-row: 1fr;
+    grid-row: 100%;
     grid-column: 80% 20% ;
     grid-template-areas: "text qr";
-
 
     width: 100%;
     height: 100%;
@@ -88,6 +87,12 @@
 
     .text{
         grid-area: text;
+        .name{
+            font-size: 1.5em;
+            font-weight: 900;
+            letter-spacing: .9px;
+            margin: 1% 0 4.5% 0;
+        }
     }
 
     .qr {
@@ -99,7 +104,35 @@
 
         border-radius: 10px;
     }
+
+    .hyperlink{
+        width: 45px;
+        margin-right: 4%;
+
+        &:hover{
+            transition: all 250ms;
+            transition-delay: 50ms;
+            transform: scale(1.2) rotate(-15deg);
+          }
+    }
+
+    .github{
+        width: 49px;
+    }
+
+    .linkedin{
+        &:hover{
+            transition: all 250ms;
+            transition-delay: 50ms;
+            transform: scale(1.2) rotate(15deg);
+          }
+    }
+
 }
+
+
+
+
 
 @media (max-width: 1000px) {
     .Contact{
@@ -145,5 +178,16 @@
         grid-column: 3/6;
 
         font-size: .8em;
+
+        .text{
+            margin-top: 2%;
+        }
     }
+
+    .contact_p .hyperlink{
+        width: 30px;
+        margin-right: 6%;
+    }
+
+
 }

@@ -15,11 +15,13 @@ export function About() {
         <img className="about_Portrait" src={Portrait} alt="Federico Brunelli Portrait"/>
 
         <Link className="skills">
-                    <Link className="Link" >Italian, 24</Link>
+                    <Link className="Link shorter" >Federico Brunelli</Link>
+                    <Link className="Link" style={{fontSize: '.92em'}}>Italian, 24</Link>
                     <Link className="Link small" >Based in:</Link>
                     <Link className="Link shorter" >Berlin, Germany</Link>
-                    <br/>
+                    <span className="brS"/>
                     <Link className="Link small" >Fluent in:</Link>
+                    <Link className="Link " ><span role="img" aria-label="italian, english, german flag">🇮🇹🇬🇧🇩🇪</span></Link>
                     <Link className="Link" >CSS3</Link>
                     <Link className="Link" >SASS</Link>
                     <Link className="Link" >HTML5</Link>
@@ -29,32 +31,50 @@ export function About() {
 
 
         <div className="aboutContent">
-          <p>My name is Federico Brunelli, I come from Verona in Italy and I've been living in Berlin for 3 years. </p>
-          <br/>
-          <p>For the last 8 months, I have been studying web development with an average of 60 hours per month while maintaining a part- time job at Beets&Roots and a MiniJob at Berlkönig.</p>
+          <h1>WHO AM I?</h1>
+          <span className="brM"/>
 
-          <br/>
+          <h2>#ROOTS</h2>
+          <p>Hey there! <span role="img" aria-label="hello wave">👋</span><br/> 
+          I'm Federico Brunelli, 24 years old, I was born in Verona, Italy hometown of Romeo & Juliet.
+          <span className="brM"/>
 
-          <p>Due to the pandemic I've recently spent less time working and have been able to focus more on my education, raising my commitment to 130+ hours per month (breaks excluded).</p>
-          <br/>
-          <p>During this time I've been building up experience with HTML5, CSS3, Javascript ES6 and ReactJs, mostly through Codecademy's interactive lessons and projects.</p>
-          <br/>
-          <p>I've always approached my studies with a hands-on mentality and have trained myself to be as independent as possible.</p>
-          <br/>
-          <p>I have learned the most through developing my own projects and by adding functionalities to the ones required by Codecademy.</p>
-          <br/>
-          <br/>
-
-          <p>This approach to self-education has taught me a lot about development, as well as teaching me to be a resourceful problem-solver.</p> 
-          <br/>
-          <p>I have encountered a lot of obstacles, and points at which solving a specific problem seemed impossible, but by pushing myself to try again, learn more and infinite hours googling, I always found what was necessary to complete my work. You can expect that from me with any task I'd be assigned to.</p>
-          <br/>
+          There, I felt surrounded by too much romanticism and way too less creative ideas, so one night I bought a one-way flight to Berlin 
+          thinking I was going on an adventure but now, after 3 years I know I was actually going to my real home.
+          <span className="brM"/>
+          I have a big passion for <a className="external_link" href="https://www.youtube.com/watch?v=2ALb2b6R1uA&ab_channel=BoardSports" target="_blank">kitesurfing</a>, <a className="external_link" href="https://www.youtube.com/watch?v=vSVZrZGm6Mo&ab_channel=RedBull" target="_blank">wakeboarding</a> and all those watersports not many people know about. <span role="img" aria-label="">😂</span></p>
+          <span className="brL"/>
 
 
-          <p>You can find a working project at this link: https://study-timer.com .</p>
-          <p>I developed this simple time tracking app in a week. I started from zero and coded, designed and deployed the app fully independently. </p>
+          <h2>#EDUCATION</h2>
+          <p>For the last 9 months, I have been studying web development while maintaining 2 jobs at <a className="external_link" href="https://www.beetsandroots.de/" target="_blank">Beets&Roots</a> and <a className="external_link" href="https://www.berlkoenig.de/" target="_blank">Berlkönig</a>.
+          <span className="brM"/>
+          Due to the pandemic I've recently spent less time working and have been able to focus more on my education, raising my commitment from 60 to 130+ hours per month.
+          <span className="brM"/>
+          During this time I've been building up experience with HTML5, CSS3, Javascript-ES6 and ReactJs, mostly through <a className="external_link" href="https://www.codecademy.com/learn/paths/web-development" target="_blank">Codecademy's</a> interactive lessons and projects.
+          <span className="brM"/>
+          I've always approached my studies with a hands-on mentality and have trained myself to be as independent as possible.
+          <span className="brM"/>
+          I have learned the most through developing my own projects and by adding functionalities to the ones required by Codecademy.
+          </p>
+          <span className="brL"/>
+
+
+          <h2>#STRENGTH</h2>
+          <p>This approach to self-education has taught me a lot about web-development, as well as teaching me to be a resourceful problem-solver.</p> 
           <br/>
-          <p>I'm also planning to create a back-end to store all the user data and create an overview of the personal stats. A desktop and mobile version is on the way too.</p>
+          <p>I have encountered a lot of obstacles and points at which solving a specific problem seemed impossible, but by pushing myself to try again, learn more and infinite hours googling, I always found what was necessary to complete my work. You can expect that from me with any task I'd be assigned to.</p>
+          <span className="brL"/>
+
+          <h2>#WORK AVAILABILITY</h2>
+          <p>
+            I'm looking for Junior front-end developer position, in a young and innovative company where I can express myself, grow with the team and be able to work remotely.
+            <span className="brM"/>
+            I would be especially interested to work in an environment where my hard and soft skills can be challenged everyday.
+            <span className="brM"/>
+            If you think I'm a good fit for your team, you can get in touch <Link className="Link deco" to="/hire">here</Link> and have a look at my <Link className="Link deco" to="/files/Brunelli_Federico_Resume.pdf" target="_blank">résumé</Link> in the meantime.
+
+          </p>
 
         </div>
 

@@ -1,24 +1,16 @@
 
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Link, Route, Switch } from 'react-router-dom';
 import {isAndroid, isIOS} from 'react-device-detect';
-
-
 import {About} from '../About/About';
 import {Hire} from '../Hire/Hire';
 import {Work} from '../Work/Work';
-
 import {study_timer} from "../Work/study_timer/study_timer.js"
 import {federicco_world} from "../Work/federicco_world/federicco_world.js"
-
-
 import {Home} from '../Home/Home';
 import {Contact} from '../Contact/Contact'
-
 import { Burger } from './Burger';
-
 import { Menu } from './Menu';
-
 //import {resume} from '../../../public/files/Brunelli_Federico_Resume.pdf';
 
 
@@ -29,7 +21,7 @@ export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const [deviceMotion, setDeviceMotion] = useState({ xAcceleration: null, yAcceleration: null });
   const [isSeen, setIsSeen] = useState({ seen: false });
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const node = React.useRef();
 
 
@@ -195,81 +187,92 @@ export default function App() {
   return (
 
     <Router>
-    <div className="Wrapper">
+      <div className="Wrapper">
 
-    <div className="Shadow pointer" style={{top: `${y}vh`, left: `${x}vw`}}></div>
-    {/* <div className="Shadow motion" style={{top: `${deviceMotion.yAcceleration}vh`, left: `${deviceMotion.xAcceleration}vw`, }}></div> */}
-    <div className="Shadow motion" style={{transform: `translate(${deviceMotion.xAcceleration*4.2}px, ${deviceMotion.yAcceleration*4.3}px)`}}></div>
+      <div className="Shadow pointer" style={{top: `${y}vh`, left: `${x}vw`}}></div>
+      {/* <div className="Shadow motion" style={{top: `${deviceMotion.yAcceleration}vh`, left: `${deviceMotion.xAcceleration}vw`, }}></div> */}
+      <div className="Shadow motion" style={{transform: `translate(${deviceMotion.xAcceleration*4.2}px, ${deviceMotion.yAcceleration*4.3}px)`}}></div>
 
-    <div className="App" >
+      <div className="App" >
 
 
-      <Link className="logo" to="/" >
-        <span>F</span>
-        <span>E</span>
-        <span>D</span>
-        <span>E</span>
-        <span>R</span>
-        <span>I</span>
-        <span>C</span>
-        <span>C</span>
-        <span>O</span>
-        <span>.</span>
-        <span>W</span>
-        <span>O</span>
-        <span>R</span>
-        <span>L</span>
-        <span>D</span>
-        </Link>
+        <Link className="logo" to="/" >
+          <span>F</span>
+          <span>E</span>
+          <span>D</span>
+          <span>E</span>
+          <span>R</span>
+          <span>I</span>
+          <span>C</span>
+          <span>C</span>
+          <span>O</span>
+          <span>.</span>
+          <span>W</span>
+          <span>O</span>
+          <span>R</span>
+          <span>L</span>
+          <span>D</span>
+          </Link>
 
-        <div ref={node} className="burgerMenu">
-        <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
+          <div ref={node} className="burgerMenu">
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+          </div>
+
+
+
+
+          {isSeen.seen ? <button className="popUp" onClick={ useIOS13MotionFunc }>
+            <div>Hey there!<span role="img" aria-label="hello wave">👋</span><br/> 
+            Before we start .. 
+            Wanna see something cool? 
+            <span className="brM"/>
+            <span>PLEASE<br/> 
+            CLICK HERE</span>
+            <span className="brM"/>
+            and allow "Motion and Orientation Access"</div></button> : null}
+
+        <Switch>
+
+          {/* The NEW WAY + HOW TO PASS PROPS=> 
+                
+                <Route exact path="/">
+                    <Home
+                      props 
+                    />
+                </Route> 
+          
+                useParams()
+          
+          */}
+
+          <Route exact path="/" component={Home}/>
+          <Route path="/hire" component={Hire}/>
+          <Route path="/about" component={About}/>
+          <Route exact path="/work" component={Work}/>
+          <Route path="/work/study_timer" component={study_timer}/>
+          <Route path="/work/federicco_world" component={federicco_world}/>
+          <Route path="/contact" component={Contact}/>
+
+        </Switch>
+
+
+        <div className="footer"> 
+          
+          <NavLink className="Link" to="/about">about</NavLink>
+          <NavLink className="Link" to="/contact">contact</NavLink>
+          <NavLink className="Link" exact="true" to="/">home</NavLink>
+          <NavLink className="Link" to="/work">projects</NavLink>
+
+          <NavLink className="Link" to="/hire">hire</NavLink>
+          
+
+        
         </div>
 
-
-
-
-        {isSeen.seen ? <button className="popUp" onClick={ useIOS13MotionFunc }>
-          <div>Hey there!<span role="img" aria-label="hello wave">👋</span><br/> 
-          Before we start .. 
-          Wanna see something cool? 
-          <span className="brM"/>
-          <span>PLEASE<br/> 
-          CLICK HERE</span>
-          <span className="brM"/>
-          and allow "Motion and Orientation Access"</div></button> : null}
-
-      <Switch>
-
-        <Route exact path="/" component={Home}/>
-        <Route path="/hire" component={Hire}/>
-        <Route path="/about" component={About}/>
-        <Route exact path="/work" component={Work}/>
-        <Route path="/work/study_timer" component={study_timer}/>
-        <Route path="/work/federicco_world" component={federicco_world}/>
-        <Route path="/contacts" component={Contact}/>
-
-      </Switch>
-
-
-      <div className="footer"> 
-        
-        <Link className="Link" to="/about">about</Link>
-        
-        <Link className="Link" to="/contacts">contacts</Link>
-        <Link className="Link" exact="true" to="/">home</Link>
-        <Link className="Link" exact="true" to="/work">projects</Link>
-
-        <Link className="Link" to="/hire">hire <span> </span></Link>
-        
-
-      
       </div>
 
-    </div>
-
-    </div>
+      </div>
     </Router>
 
   );

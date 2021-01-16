@@ -44,6 +44,7 @@ const StyledBurger = styled.button`
 
 
     :first-child {
+      transition: 210ms;
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
 
     }
@@ -54,6 +55,7 @@ const StyledBurger = styled.button`
     }
 
     :nth-child(3) {
+      transition: 210ms;
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
 

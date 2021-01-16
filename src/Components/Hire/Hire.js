@@ -27,14 +27,14 @@ export class Hire extends React.Component {
             <br/>
             <div className="Hire_text">
             <h2>LET'S GET IN TOUCH</h2><br/>
-            Do you think like I could be a good candidate for your company? Awesome!<span className="brS"/>
+            Do you think I could be a good candidate for your company? Awesome!<span className="brS"/>
 
-            Here's <Link className="external_link" to="/files/Brunelli_Federico_Resume.pdf" target="_blank" style={{color: "black"}}>my curriculum</Link>, 
-            in the meantime you know what to do <span role="img" aria-label="">  👉</span>
+            Here's <Link className="external_link" to="/files/Brunelli_Federico_Resume.pdf" target="_blank" style={{color: "black"}}>my curriculum</Link>. 
+             In the meantime you know what to do <span role="img" aria-label="">  👉</span>
             <span className="brL"/>
             
-            Or you feel like I'm right person to build your digital product? Challenge accepted! <span className="brS"/>
-            Send me an email, we’ll organize a call when it best fits for you and tailor design, delivery and price around your needs. <span className="brS"/>
+            Or do you feel like I'm the right person to build your digital product? Challenge accepted! <span className="brS"/>
+            Send me an email and we’ll organize a call when it best fits for you and tailor design, delivery and price around your needs. <span className="brS"/>
             
             </div>
             </div>

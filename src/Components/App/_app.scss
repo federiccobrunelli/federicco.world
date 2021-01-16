@@ -4,7 +4,7 @@
   font-family: 'Inter', sans-serif;
   min-height: 0;
   min-width: 0;
-  overflow: scroll;
+  overflow: auto;
 
   display: grid;
 
@@ -101,12 +101,23 @@
     margin-bottom: 3em; 
   } 
 
+  .brXXXL { 
+    display: block; 
+    margin-bottom: 3.6em; 
+  } 
+
   .external_link, .deco{
     color: #7fe3c8;
     text-decoration: underline;
   }
 
+  .active{
+    font-size: 1.06em;
+    border-bottom: 2px solid #7fe3c8;
+  }
+
 }
+
 
 %ShadowAndApp{
   margin: 2.5% auto 0 auto;
@@ -216,8 +227,8 @@
 
     a{
       &:hover{
-        transition: all 150ms;
-        transform: scale(1.5, 1.5);
+        transition: all 120ms;
+        transform: scale(1.2, 1.2);
 
       }
     }

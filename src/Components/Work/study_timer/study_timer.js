@@ -27,7 +27,7 @@ export function study_timer() {
 
 
         <div className="content study_timer_content">
-          <h1><a href="https://www.study-timer.com" alt="" target="_blank">STUDY-TIMER.COM</a></h1>
+          <h1><a href="https://www.study-timer.com" alt="" target="_blank">Project #1: STUDY-TIMER.COM</a></h1>
           <br/>
 
           <p><a href="https://www.study-timer.com" alt="" target="_blank" className="external_link">
@@ -36,13 +36,13 @@ export function study_timer() {
           <span className="brM"/>
           <h2>#USE CASE SCENARIO</h2>
           <span className="brS"/>
-          It can be used in many situations but I found it to be a key element to give myself a structure when studying and to keep me motivated to do more every day. 
-          I've been storing all this sessions data on an excel file which gave me an excellent overview of my progress and commitment.
+          It can be used in many situations but I found it to be a key element to give myself structure when studying and to keep me motivated to do more every day. 
+          I've been storing data from all my sessions in an excel file, which gives me an excellent overview of my progress and commitment.
 
           <span className="brM"/>
           <h2>#HISTORY</h2>
           <span className="brS"/>
-          I’ve been using a similar app at beginning of my learning path, and after 6 months once I had enough knowledge I developed my own time-tracking application.
+          I was using a similar app at beginning of my learning path, and after 6 months once I had enough knowledge, I developed my own time-tracking application.
           
           <span className="brM"/>
           <h2>#NEXT UPDATES</h2>

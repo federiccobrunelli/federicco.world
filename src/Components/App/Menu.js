@@ -14,7 +14,7 @@ export const Menu = ({ open, setOpen }) => {
         <Link className="Link" to="/about" onClick={() => setOpen(!open)}>about</Link>
         <Link className="Link" exact="true" to="/work" onClick={() => setOpen(!open)}>projects</Link>
         <Link className="Link" to="/files/Brunelli_Federico_Resume.pdf" target="_blank" onClick={() => setOpen(!open)}>cv</Link>
-        <Link className="Link" to="/contacts" onClick={() => setOpen(!open)}>contacts</Link>
+        <Link className="Link" to="/contact" onClick={() => setOpen(!open)}>contact</Link>
         
 
     </StyledMenu>

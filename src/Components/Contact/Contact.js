@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import contact_pic from "./contact_picture.png";
 import instagram from "./instagram.png";
-import linkedin from "./linkedin.png"
-import github from "./github.png"
+import linkedin from "./linkedin.png";
+import github from "./github.png";
+import fiverr from "./fiverr.png"
+import dribbble from "./dribbble.png"
 
 
 
@@ -16,7 +18,7 @@ export function Contact() {
 
 
                 <div className="Contact">
-                <div className="contact_title">Contacts</div>
+                <div className="contact_title">Contact</div>
                 <img className="contact_pic" src={contact_pic} alt=""/>
                 <div className="black_div"></div>
                 <div className="contact_p">
@@ -43,7 +45,15 @@ export function Contact() {
                   <a href="https://github.com/federiccobrunelli" target="_blank">
                     <img className="github hyperlink" src={github} alt="link to github"/>
                   </a>
-                  
+
+                  <a href="https://dribbble.com/Federicco" target="_blank">
+                    <img className="linkedin hyperlink" src={dribbble} alt="link to dribbble"/>
+                  </a>
+
+                  <a href="https://www.fiverr.com/federiccob" target="_blank">
+                    <img className="github hyperlink" src={fiverr} alt="link to fiverr"/>
+                  </a>
+
                   <br/>
                   </div>
 

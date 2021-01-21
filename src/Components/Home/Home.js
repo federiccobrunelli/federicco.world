@@ -13,11 +13,11 @@ export function Home() {
             <div className="Home">
                 <Link className="hire_me title" to="/hire"><span>hire me</span></Link>
                 <Link className="hire_me_img square" to="/hire">
-                    <Link className="Link" to="/hire">Custom</Link>
-                    <Link className="Link" to="/hire">Built</Link>
+                    <Link className="Link" to="/hire">Custom built</Link>
+                    <Link className="Link" to="/hire"></Link>
                     <Link className="Link" to="/hire">Responsive</Link>
                     <Link className="Link" to="/hire">Websites</Link>
-                    <Link className="Link highlight lets" to="/hire">Hire me <br/> here.</Link>
+                    <Link className="Link highlight lets" to="/hire">Work <br/> with me.</Link>
                     {/* <Link className="Link highlight" to="/hire"></Link> */}
                     <Link className="Link" to="/hire">Federico Brunelli</Link>
                 </Link>

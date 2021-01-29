@@ -20,13 +20,8 @@ export function About() {
                     <Link className="Link small" >Based in:</Link>
                     <Link className="Link shorter" >Berlin, Germany</Link>
                     <span className="brS"/>
-                    <Link className="Link small" >Fluent in:</Link>
-                    <Link className="Link " ><span role="img" aria-label="italian, english, german flag">🇮🇹🇬🇧🇩🇪</span></Link>
-                    <Link className="Link" >CSS3</Link>
-                    <Link className="Link" >SASS</Link>
-                    <Link className="Link" >HTML5</Link>
-                    <Link className="Link" >JavaScript</Link>
-                    <Link className="Link" >ReactJs</Link>
+                    <Link className="Link" >I speak: <span role="img" aria-label="italian, english, german flag">🇮🇹🇬🇧🇩🇪</span></Link>
+
           </Link>
 
 

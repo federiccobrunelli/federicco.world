@@ -59,19 +59,22 @@ export function Work() {
 
       <div className="Work">
 
-
-
-
-
-        {/* STUDY-TIMER.COM */}
+        {/* GRAPHILIGHT.IT */}
         <div className='cardWrapper'>
-          <Link className="study_timer_title title_projects" to={`${url}/study_timer`}><span>study-timer.com</span></Link>
-          <Link className="study_timer_img square_projects" to={`${url}/study_timer`}>
-            <img src={study_timer_demo} alt="study_timer" />
-          </Link>
+          <a className="graphilight_title title_projects" href='https://www.graphilight.it' target='_blank'><span>graphilight.it <span className='freelance_tag'>(freelance)</span></span>&nbsp;</a>
+          <a className="graphilight_img square_projects" href='https://www.graphilight.it' target='_blank'>
+            <img src={graphilight} alt="graphilight" />
+          </a>
         </div>
 
 
+        {/* NETFLIX CLONE */}
+        <div className='cardWrapper'>
+          <a className="title_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank'><span>Netflix-Clone</span></a>
+          <a className="square_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank'>
+            <img src={netflix_clone} alt="netflix_clone" />
+          </a>
+        </div>
 
         {/* FEDERICCO.WORLD */}
         <div className='cardWrapper'>
@@ -81,23 +84,13 @@ export function Work() {
           </Link>
         </div>
 
-
-
-        {/* GRAPHILIGHT.IT */}
+        {/* STUDY-TIMER.COM */}
         <div className='cardWrapper'>
-          <a className="graphilight_title title_projects" href='https://www.graphilight.it' target='_blank'><span>graphilight.it <span className='freelance_tag'>(freelance)</span></span>&nbsp;</a>
-          <a className="graphilight_img square_projects" href='https://www.graphilight.it' target='_blank'>
-            <img src={graphilight} alt="graphilight" />
-          </a>
+          <Link className="study_timer_title title_projects" to={`${url}/study_timer`}><span>study-timer.com</span></Link>
+          <Link className="study_timer_img square_projects" to={`${url}/study_timer`}>
+            <img src={study_timer_demo} alt="study_timer" />
+          </Link>
         </div>
-        <div className='cardWrapper'>
-          <a className="title_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank'><span>Netflix-Clone</span></a>
-          <a className="square_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank'>
-            <img src={netflix_clone} alt="netflix_clone" />
-          </a>
-        </div>
-
-
 
 
       </div>

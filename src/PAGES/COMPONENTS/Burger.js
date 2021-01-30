@@ -9,8 +9,8 @@ const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 1.7rem;
+  width: 30px;
+  height: 27px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -24,7 +24,7 @@ const StyledBurger = styled.button`
 
 
   div {
-    width: 1.7rem;
+    width: ${({ open }) => open ? '27px' : '30px'};
     height: 5.5px;
 
     background: black;
@@ -33,20 +33,16 @@ const StyledBurger = styled.button`
     position: relative;
     transform-origin: 0.5px;
     z-index: 1000;
+    transition: 210ms;
 
     &:hover{
-
         transition: 90ms;
-        width: ${({ open }) => open ? '1.7rem' : '2.2rem'};
+        width: ${({ open }) => open ? '27px' : '35px'};
         background: ${({ open }) => open ? 'black' : '#A2FFE6'};
-        
       }
 
-
     :first-child {
-      transition: 210ms;
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-
     }
 
     :nth-child(2) {
@@ -55,25 +51,22 @@ const StyledBurger = styled.button`
     }
 
     :nth-child(3) {
-      transition: 210ms;
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
-
   }
 
 
   @media (max-width: 1000px) {
+    height: 20px;
 
-    height: 1.15rem;
-
+    
     div {
-      width: 1.15rem;
-      height: 0.25rem;
-
+      width: 20px;
+      height: 4.5px;
+      
       &:hover{
-        width: 1.15rem;
+        width: 20px;
         background: black;
-
       }
     }
   }

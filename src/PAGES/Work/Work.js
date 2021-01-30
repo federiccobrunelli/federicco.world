@@ -1,29 +1,16 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useRouteMatch } from 'react-router-dom';
 
-import study_timer_demo from "./study_timer_demo.gif";
-import federicco_world from "./federicco_world_demo.gif";
-import graphilight from "./graphilight_demo.gif";
-import netflix_clone from "./netflix_clone.png";
-
-
-
-{/* 
-                  THIS COULD BE IMPROVED USING useRouteMatch AND BECOME SOMETHING LIKE THIS:
-
-                    First, before return () ->     
-                    
-                    const {path, url} = useRouteMatch()
-    
-                    <Link className="study_timer title" to={`${url}/study_timer`}><span>study-timer.com</span></Link>
-                */}
-
+import study_timer_demo from "./media/study_timer_demo.gif";
+import federicco_world from "./media/federicco_world_demo.gif";
+import graphilight from "./media/graphilight_demo.gif";
+import netflix_clone from "./media/netflix_clone.png";
 
 
 
 export function Work() {
-  const { path, url } = useRouteMatch()
+  const { url } = useRouteMatch()
 
   //to make 3d effect with card
   // const [mousePosition, setMousePosition] = useState({ x: null, y: null });
@@ -61,8 +48,8 @@ export function Work() {
 
         {/* GRAPHILIGHT.IT */}
         <div className='cardWrapper'>
-          <a className="graphilight_title title_projects" href='https://www.graphilight.it' target='_blank'><span>graphilight.it <span className='freelance_tag'>(freelance)</span></span>&nbsp;</a>
-          <a className="graphilight_img square_projects" href='https://www.graphilight.it' target='_blank'>
+          <a className="graphilight_title title_projects" href='https://www.graphilight.it' target='_blank' rel="noopener noreferrer"><span>graphilight.it <span className='freelance_tag'>(freelance)</span></span>&nbsp;</a>
+          <a className="graphilight_img square_projects" href='https://www.graphilight.it' target='_blank' rel="noopener noreferrer">
             <img src={graphilight} alt="graphilight" />
           </a>
         </div>
@@ -70,8 +57,8 @@ export function Work() {
 
         {/* NETFLIX CLONE */}
         <div className='cardWrapper'>
-          <a className="title_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank'><span>Netflix-Clone</span></a>
-          <a className="square_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank'>
+          <a className="title_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank' rel="noopener noreferrer"><span>Netflix-Clone</span></a>
+          <a className="square_projects" href='https://github.com/federiccobrunelli/netflix-clone' target='_blank' rel="noopener noreferrer">
             <img src={netflix_clone} alt="netflix_clone" />
           </a>
         </div>

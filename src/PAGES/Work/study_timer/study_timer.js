@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from 'react-router-dom';
-import img from '../study_timer_demo.gif'
+import img from '../media/study_timer_demo.gif'
 
 
 
@@ -27,10 +27,10 @@ export function study_timer() {
 
 
         <div className="content study_timer_content">
-          <h1><a href="https://www.study-timer.com" alt="" target="_blank">Project #1: STUDY-TIMER.COM</a></h1>
+          <h1><a href="https://www.study-timer.com" alt="" target="_blank" rel="noopener noreferrer" >Project #1: STUDY-TIMER.COM</a></h1>
           <br/>
 
-          <p><a href="https://www.study-timer.com" alt="" target="_blank" className="external_link">
+          <p><a href="https://www.study-timer.com" alt="" target="_blank" rel="noopener noreferrer" className="external_link">
             study-timer.com</a> is an incredibly useful tool to track the time spent on a break or focused on a task.
 
           <span className="brM"/>

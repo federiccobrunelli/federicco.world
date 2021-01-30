@@ -97,23 +97,23 @@
       transition: all 250ms;
     }
 
-    a{
-      &:hover{
+    // a{
+    //   &:hover{
 
-        border-radius: 6px;
-        background: #A2FFE6;
-        color: #0A0A0A;
-        border: 0px solid transparent ;
-        padding: 0 4% 0 18%;
-        transition: all 250ms;
-      }
-    }
+    //     border-radius: 6px;
+    //     background: #A2FFE6;
+    //     color: #0A0A0A;
+    //     border: 0px solid transparent ;
+    //     padding: 0 4% 0 18%;
+    //     transition: all 250ms;
+    //   }
+    // }
 
-    .shorter{
-        &:hover{
-            padding: 0 4% 0 13%;
-        }
-    }
+    // .shorter{
+    //     &:hover{
+    //         padding: 0 4% 0 13%;
+    //     }
+    // }
 
 }
 

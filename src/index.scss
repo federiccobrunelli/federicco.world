@@ -1,28 +1,41 @@
-@import "Components/App/app";
-@import "Components/App/appMobile";
+@import "PAGES/App/app";
+@import "PAGES/App/appMobile";
 
-@import "Components/About/About";
-@import "Components/About/AboutMobile";
+@import "PAGES/About/About";
+@import "PAGES/About/AboutMobile";
 
-@import "Components/Hire/Hire";
+@import "PAGES/Hire/Hire";
 
-@import "Components/Work/Work";
-@import "Components/Work/study_timer/study_timer";
-@import "Components/Work/federicco_world/federicco_world";
+@import "PAGES/Work/Work";
+@import "PAGES/Work/study_timer/study_timer";
+@import "PAGES/Work/federicco_world/federicco_world";
 
-@import "Components/Home/home";
-@import "Components/Home/homeMobile";
+@import "PAGES/Home/home";
 
-@import "Components/Contact/contact";
+@import "PAGES/Contact/contact";
 
 * {
   box-sizing: border-box;
 }
 
-@media (max-width: 1000px) {
-  ::-webkit-scrollbar {
-    display: none;
-  }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+}
+
+#root,
+body,
+html {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 ::-webkit-scrollbar {
@@ -45,22 +58,8 @@
   background: rgba(85, 85, 85, 0.692);
 }
 
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  height: 100%;
-  background-color: #141414;
-}
-
-#root,
-body,
-html {
-  margin: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+@media (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }

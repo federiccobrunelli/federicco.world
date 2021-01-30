@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import contact_pic from "./contact_picture.png";
-import instagram from "./instagram.png";
-import linkedin from "./linkedin.png";
-import github from "./github.png";
-import fiverr from "./fiverr.png"
-import dribbble from "./dribbble.png"
+import contact_pic from "./media/contact_picture.png";
+import instagram from "./media/instagram.png";
+import linkedin from "./media/linkedin.png";
+import github from "./media/github.png";
+import fiverr from "./media/fiverr.png"
+import dribbble from "./media/dribbble.png"
 
 
 
@@ -34,35 +33,28 @@ export function Contact() {
                   <h3>federiccoworld@gmail.com</h3>
                   <br/>
 
-                  <a href="https://www.instagram.com/federiccobrunelli/" target="_blank">
+                  <a href="https://www.instagram.com/federiccobrunelli/" target="_blank" rel="noopener noreferrer">
                     <img className="instagram hyperlink" src={instagram} alt="link to instagram"/>
                   </a>
 
-                  <a href="https://www.linkedin.com/in/federico-brunelli-5aba08199/" target="_blank">
+                  <a href="https://www.linkedin.com/in/federico-brunelli-5aba08199/" target="_blank" rel="noopener noreferrer">
                     <img className="linkedin hyperlink" src={linkedin} alt="link to linkedin"/>
                   </a>
 
-                  <a href="https://github.com/federiccobrunelli" target="_blank">
+                  <a href="https://github.com/federiccobrunelli" target="_blank" rel="noopener noreferrer">
                     <img className="github hyperlink" src={github} alt="link to github"/>
                   </a>
 
-                  <a href="https://dribbble.com/Federicco" target="_blank">
+                  <a href="https://dribbble.com/Federicco" target="_blank" rel="noopener noreferrer">
                     <img className="linkedin hyperlink" src={dribbble} alt="link to dribbble"/>
                   </a>
 
-                  <a href="https://www.fiverr.com/federiccob" target="_blank">
+                  <a href="https://www.fiverr.com/federiccob" target="_blank" rel="noopener noreferrer">
                     <img className="github hyperlink" src={fiverr} alt="link to fiverr"/>
                   </a>
 
                   <br/>
                   </div>
-
-
-
-                  {/* <img  className="qr"src={qr_code} alt="qr code"/> */}
-
-
-
 
                 </div>
             </div>

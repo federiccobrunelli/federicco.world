@@ -6,6 +6,7 @@ import study_timer_demo from "./media/study_timer_demo.gif";
 import federicco_world from "./media/federicco_world_demo.gif";
 import graphilight from "./media/graphilight_demo.gif";
 import netflix_clone from "./media/netflix_clone.png";
+import amici_rent from "./media/amici_rent.png";
 
 
 
@@ -51,6 +52,15 @@ export function Work() {
           <a className="graphilight_title title_projects" href='https://www.graphilight.it' target='_blank' rel="noopener noreferrer"><span>graphilight.it <span className='freelance_tag'>(freelance)</span></span>&nbsp;</a>
           <a className="graphilight_img square_projects" href='https://www.graphilight.it' target='_blank' rel="noopener noreferrer">
             <img src={graphilight} alt="graphilight" />
+          </a>
+        </div>
+
+
+        {/* AMICI RENT */}
+        <div className='cardWrapper'>
+          <a className="amici_rent_title title_projects" href='https://github.com/federiccobrunelli/amici-rent' target='_blank' rel="noopener noreferrer"><span>amicirent.it <span className='freelance_tag'>(in progress)</span></span>&nbsp;</a>
+          <a className="amici_rent_img square_projects" href='https://github.com/federiccobrunelli/amici-rent' target='_blank' rel="noopener noreferrer">
+            <img src={amici_rent} alt="amici_rent" />
           </a>
         </div>
 

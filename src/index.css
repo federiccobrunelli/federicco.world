@@ -243,6 +243,43 @@ a {
     padding-bottom: 10%;
   }
 }
+.loadingWrapper {
+  height: 100%;
+  width: 100%;
+  background: #A2FFE6;
+  animation: body 2.5s infinite linear;
+  animation-direction: alternate;
+}
+
+@keyframes body {
+  from {
+    background: #A2FFE6;
+  }
+  to {
+    background: black;
+  }
+}
+svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.svg {
+  animation: svg 2.5s infinite linear;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes svg {
+  to {
+    stroke-dashoffset: 0;
+    fill: #A2FFE6;
+  }
+}
 .about {
   grid-area: component;
   height: 100%;
@@ -576,6 +613,9 @@ a {
     flex-direction: column;
     overflow-x: hidden;
   }
+  .Work :last-child {
+    margin-bottom: 0;
+  }
 
   .title_projects {
     height: auto;
@@ -587,10 +627,6 @@ a {
 
   .cardWrapper {
     margin: 10% auto 15% auto;
-  }
-
-  :last-child {
-    margin-bottom: 0;
   }
 }
 .study_timer_demo {

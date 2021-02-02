@@ -20,7 +20,8 @@ export function Home() {
                         <Link className="Link" to="/hire">Responsive</Link>
                         <Link className="Link" to="/hire">Websites</Link>
                         <Link className="Link highlight " to="/hire">Work <br/> with me.</Link>
-                        <Link className="Link" to="/hire">Federico Brunelli</Link>
+                        {/* <Link className="Link" to="/hire">Federico Brunelli</Link> */}
+                        <Link className="Link" to="/hire">Frontend Developer</Link>
                     </Link>
                 </div>
 
@@ -38,7 +39,8 @@ export function Home() {
                         <Link className="Link" to="/work">HTML5</Link>
                         <Link className="Link" to="/work">ReactJs</Link>
                         <Link className="Link highlight " to="/work">Latest<br/>Projects</Link>
-                        <Link className="Link" to="/work">UI Design</Link>
+                        {/* <Link className="Link" to="/work">UI Design</Link> */}
+                        <Link className="Link" to="/work">React Native</Link>
                         <Link className="Link" to="/work">JavaScript</Link>
                     </Link>
                 </div>

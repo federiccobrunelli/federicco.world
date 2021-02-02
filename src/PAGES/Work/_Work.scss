@@ -69,6 +69,11 @@
   }
 }
 
+// .cardWrapper .amici_rent_img{
+//   background: white;
+//   border: 2px solid black;
+// }
+
 .square_projects {
   //LAYOUT
   display: flex;
@@ -118,6 +123,10 @@
     flex-direction: column;
 
     overflow-x: hidden;
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   .title_projects {
@@ -132,9 +141,6 @@
     margin: 10% auto 15% auto;
   }
 
-  :last-child {
-    margin-bottom: 0;
-  }
 }
 
 

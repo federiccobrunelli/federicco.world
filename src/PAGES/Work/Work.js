@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from 'react-router-dom';
 
 import study_timer_demo from "./media/study_timer_demo.gif";
@@ -7,6 +7,7 @@ import federicco_world from "./media/federicco_world_demo.gif";
 import graphilight from "./media/graphilight_demo.gif";
 import netflix_clone from "./media/netflix_clone.png";
 import amici_rent from "./media/amici_rent.png";
+
 
 
 
@@ -39,10 +40,7 @@ export function Work() {
   // const { x, y } = useMousePosition();
 
 
-
-
   return (
-
     <div className="Work_wrapper">
 
       <div className="Work">

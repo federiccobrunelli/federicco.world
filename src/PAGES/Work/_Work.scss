@@ -5,12 +5,11 @@
   grid-area: component;
   display: flex;
 
-  @media (min-width: 1870px){
+  @media (min-width: 1870px) {
     ::-webkit-scrollbar {
       display: none;
     }
   }
-  
 }
 
 .Work {
@@ -140,7 +139,4 @@
   .cardWrapper {
     margin: 10% auto 15% auto;
   }
-
 }
-
-

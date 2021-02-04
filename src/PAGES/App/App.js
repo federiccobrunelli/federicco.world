@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { isAndroid, isIOS } from 'react-device-detect';
 import {About, Hire, Work, study_timer, federicco_world, Home, Contact} from '../index';
-import { Logo, Footer, Burger, Menu, PopUp } from '../COMPONENTS';
+import { Logo, Footer, Burger, Menu, PopUp } from '../../COMPONENTS';
 import { useMousePosition } from '../../UTILS';
 import { LoadingAnimation } from './LoadingAnimation';
 
@@ -17,7 +17,7 @@ export default function App() {
   const [deviceMotion, setDeviceMotion] = useState({ xAcceleration: null, yAcceleration: null });
   const [isSeen, setIsSeen] = useState({ seen: false }); //only for ios13
 
-  const [UIisloaded, setUIisloaded] = useState(false)
+  const [UIisloaded, setUIisloaded] = useState(false);
 
 
   //MOBILE SHADOW EFFECT
@@ -157,11 +157,9 @@ export default function App() {
 
   useOutsideClick(node, () => setOpen(false));
 
-  useEffect(() => {
-    setTimeout(() => {
-      setUIisloaded(true)
-    }, 1500)
-  }, []);
+  setTimeout(() => {
+    setUIisloaded(true)
+  }, 2000)
 
 
   return (

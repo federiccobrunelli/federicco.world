@@ -11,7 +11,7 @@ export const Context = createContext()
 
 ReactDOM.render(
   <Context.Provider value={'hiya'}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </Context.Provider>,
